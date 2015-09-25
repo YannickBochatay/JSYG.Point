@@ -1,8 +1,14 @@
-;(function() {
+(function(root,factory) {
+    
+    if (typeof define == 'function' && define.amd) define(factory);
+    else if (typeof JSYG != "undefined") factory();
+    else root.Point = factory();
+    
+}(this,function() {
 	
     "use strict";
 	
-    var svg = this.document && this.document.createElementNS && this.document.createElementNS('http://www.w3.org/2000/svg','svg');
+    var svg = (typeof document != "undefined") && document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg','svg');
 	
     function Point(x,y) {
 		
@@ -13,7 +19,7 @@
 		
         this.x = (typeof x == "number") ? x : parseFloat(x);
         this.y = (typeof y == "number") ? y : parseFloat(y);
-    };
+    }
 	
     Point.prototype = {
 			
@@ -56,7 +62,6 @@
     
     if (typeof JSYG != "undefined") JSYG.Point = Point;
 	
-    if (typeof define == 'function' && define.amd) define(function() { return Point; });
-    else if (typeof JSYG == "undefined") this.Point = Point;
+    return Point;
 	
-}).call(this);
+}));
