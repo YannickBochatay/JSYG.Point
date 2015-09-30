@@ -2,7 +2,7 @@ if (typeof require!= "undefined") {
     
     require.config({
         paths: {
-            "point": '../JSYG.Point'
+            "jsyg-point": '../JSYG.Point'
         },
         urlArgs: "bust=" + new Date()
     });
@@ -10,7 +10,7 @@ if (typeof require!= "undefined") {
 
 (function(factory) {
     
-    if (typeof define == 'function' && define.amd) define(["point"],factory);
+    if (typeof define == 'function' && define.amd) define(["jsyg-point"],factory);
     else factory(Point);
     
 }(function(Point) {
