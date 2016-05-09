@@ -1,6 +1,6 @@
 {
   "name": "jsyg-point",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Point constructor for JSYG",
   "main": "JSYG.Point.js",
   "directories": {
