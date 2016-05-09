@@ -1,0 +1,28 @@
+{
+  "name": "jsyg-point",
+  "version": "0.1.4",
+  "description": "Point constructor for JSYG",
+  "main": "JSYG.Point.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/YannickBochatay/JSYG.Point.git"
+  },
+  "keywords": [
+    "svg",
+    "jquery",
+    "javascript",
+    "library"
+  ],
+  "author": "Yannick Bochatay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YannickBochatay/JSYG.Point/issues"
+  },
+  "homepage": "https://github.com/YannickBochatay/JSYG.Point#readme"
+}
