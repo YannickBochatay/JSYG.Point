@@ -8,27 +8,33 @@ if (typeof require!= "undefined") {
     });
 }
 
+QUnit.config.autostart = false;
+
 (function(factory) {
     
-    if (typeof define == 'function' && define.amd) define(["jsyg-point"],factory);
+    if (typeof define == 'function' && define.amd) require(["jsyg-point"],factory);
     else factory(Point);
     
 }(function(Point) {
+
+    QUnit.start()
+
+    const { module, test } = QUnit
 
     module("JSYG.Point");
 
     var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
 
-    test("Création d'un point", function() {
+    test("Création d'un point", assert => {
 
         var point = new Point(5,10);
 
-        expect(2);
-        equal(point.x,5,"abcisse");
-        equal(point.y,10,"ordonnée");
+        assert.expect(2);
+        assert.equal(point.x,5,"abcisse");
+        assert.equal(point.y,10,"ordonnée");
     });
 
-    test("Translation d'un point", function() {
+    test("Translation d'un point", assert => {
 
         var point = new Point(5,10);
         var mtx = svg.createSVGMatrix();
@@ -38,13 +44,13 @@ if (typeof require!= "undefined") {
 
         point = point.mtx(mtx);
 
-        expect(2);
-        equal(point.x,10,"abcisse");
-        equal(point.y,20,"ordonnée");
+        assert.expect(2);
+        assert.equal(point.x,10,"abcisse");
+        assert.equal(point.y,20,"ordonnée");
 
     });
 
-    test("Echelle d'un point", function() {
+    test("Echelle d'un point", assert => {
 
         var point = new Point(5,10);
         var mtx = svg.createSVGMatrix();
@@ -54,18 +60,18 @@ if (typeof require!= "undefined") {
 
         point = point.mtx(mtx);
 
-        expect(2);
-        equal(point.x,10,"abcisse");
-        equal(point.y,20,"ordonnée");
+        assert.expect(2);
+        assert.equal(point.x,10,"abcisse");
+        assert.equal(point.y,20,"ordonnée");
     });
     
     
-    test("Transformation en chaine", function() {
+    test("Transformation en chaine", assert => {
         
         var point = new Point(5,10);
 
-        equal(point.toString(), '{"x":5,"y":10}', "Méthode toString" );
-        equal(point.toJSON(), '{"x":5,"y":10}', "Méthode toJSON" );
+        assert.equal(point.toString(), '{"x":5,"y":10}', "Méthode toString" );
+        assert.equal(point.toJSON(), '{"x":5,"y":10}', "Méthode toJSON" );
     });
     
 }));

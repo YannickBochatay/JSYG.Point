@@ -14,8 +14,8 @@ mtx.f = 3;
 point.mtx(mtx).toString(); //{"x":7,"y":13}
 ```
 
-##### Installation with bower
+##### Installation with npm
 
 ```shell
-bower install jsyg-point
+npm install jsyg-point
 ```
